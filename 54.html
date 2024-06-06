@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head> 
+    <meta charset="utf-8">
+    <title>Rysowanie prostokąta z gwiazdek</title>
+</head> 
+<body> 
+    <script language="JavaScript">
+        // Pobranie imienia i nazwiska od użytkownika
+        var imie = prompt("Podaj imię:");
+        var nazwisko = prompt("Podaj nazwisko:");
+
+        // Obliczenie wartości a i b zgodnie z podanymi wzorami
+        var liczba_liter_nazwiska = nazwisko.length;
+        var liczba_liter_imienia = imie.length;
+        var a = (liczba_liter_nazwiska % 4) + 5;
+        var b = (liczba_liter_imienia % 6) + 20;
+
+        // Pierwsza pętla rysuje górną krawędź prostokąta
+        var gornaKrawedz = '';
+        for (var i = 0; i < b; i++) {
+            gornaKrawedz += '*';
+        }
+        document.write(gornaKrawedz + '<br>');
+
+        // Druga pętla rysuje środkowe wiersze prostokąta
+        for (var i = 0; i < a - 2; i++) {
+            var wiersz = '*';
+            for (var j = 0; j < b - 2; j++) {
+                if (j === 0 || j === b - 3) {
+                    wiersz += '&nbsp;&nbsp;'; // Dodaj dwie spacje tylko na początku i końcu wiersza
+                } else {
+                    wiersz += '&nbsp;'; // Dodaj jedną spację między gwiazdkami
+                }
+            }
+            wiersz += '*';
+            document.write(wiersz + '<br>');
+        }
+
+        // Trzecia pętla rysuje dolną krawędź prostokąta
+        var dolnaKrawedz = '';
+        for (var i = 0; i < b; i++) {
+            dolnaKrawedz += '*';
+        }
+        document.write(dolnaKrawedz);
+    </script>
+</body> 
+</html>

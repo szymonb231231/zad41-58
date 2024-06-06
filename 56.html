@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head> 
+    <meta charset="utf-8">
+    <title>Obliczanie liczb pierwszych</title>
+</head> 
+<body> 
+    <script language="JavaScript">
+        // Funkcja sprawdzająca czy liczba jest pierwsza
+        function czyPierwsza(n) {
+            if (n <= 1) return false;
+            if (n <= 3) return true;
+            if (n % 2 === 0 || n % 3 === 0) return false;
+            for (var i = 5; i * i <= n; i += 6) {
+                if (n % i === 0 || n % (i + 2) === 0) return false;
+            }
+            return true;
+        }
+
+        // Funkcja obliczająca wartość wielomianu
+        function obliczWartosc(i) {
+            return Math.pow(i, 2) + i + 41;
+        }
+
+        // Znalezienie i wyświetlenie 40 liczb pierwszych
+        var znalezione = 0;
+        for (var i = 0; znalezione < 40; i++) {
+            var wartosc = obliczWartosc(i);
+            if (czyPierwsza(wartosc)) {
+                document.write("i=" + i + " w(" + i + ")=" + wartosc + "<br>");
+                znalezione++;
+                if (znalezione % 5 === 0) {
+                    var potwierdzenie = confirm("Aby kontynuować, naciśnij przycisk OK.");
+                    if (!potwierdzenie) break;
+                }
+            }
+        }
+    </script>
+</body> 
+</html>

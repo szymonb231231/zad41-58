@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head> 
+    <meta charset="utf-8">
+    <title>Wypisywanie liczb nieparzystych</title>
+</head> 
+<body> 
+    <script language="JavaScript">
+        // Funkcja wypisująca liczby nieparzyste między dwiema liczbami
+        function wypiszLiczbyNieparzyste(liczba1, liczba2) {
+            var mniejsza = Math.min(liczba1, liczba2);
+            var wieksza = Math.max(liczba1, liczba2);
+            var kolor, czcionka;
+
+            if (liczba1 === liczba2) {
+                confirm("Podane liczby są równe. Brak obliczeń.");
+                return;
+            } else if (liczba1 < liczba2) {
+                kolor = "green";
+                czcionka = "normal";
+            } else {
+                kolor = "blue";
+                czcionka = "50%";
+            }
+
+            document.write("<p style=\"color:" + kolor + "; font-size:" + czcionka + "\">");
+
+            for (var i = mniejsza + 1; i < wieksza; i++) {
+                if (i % 2 !== 0) {
+                    document.write(i + " ");
+                }
+            }
+
+            document.write("</p>");
+        }
+
+        // Wczytywanie dwóch liczb
+        var liczba1 = parseInt(prompt("Podaj pierwszą liczbę:"));
+        var liczba2 = parseInt(prompt("Podaj drugą liczbę:"));
+
+        // Wywołanie funkcji wypisującej liczby nieparzyste
+        wypiszLiczbyNieparzyste(liczba1, liczba2);
+    </script>
+</body> 
+</html>

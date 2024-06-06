@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head> 
+    <meta charset="utf-8">
+    <title>Rysowanie prostokąta z gwiazdek</title>
+</head> 
+<body> 
+    <script language="JavaScript">
+        var a_kow = parseInt(prompt("Podaj wysokość prostokąta (liczbę wierszy):"));
+        var b_kow = parseInt(prompt("Podaj szerokość prostokąta (liczbę kolumn):"));
+
+        // Pierwsza pętla rysuje górną krawędź prostokąta
+        var gornaKrawedz = '';
+        for (var i = 0; i < b_kow; i++) {
+            gornaKrawedz += '*';
+        }
+        document.write(gornaKrawedz + '<br>');
+
+        // Druga pętla rysuje środkowe wiersze prostokąta
+        for (var i = 0; i < a_kow - 2; i++) {
+            var wiersz_kow = '*';
+            for (var j = 0; j < b_kow - 2; j++) {
+                wiersz_kow += '&nbsp;&nbsp;';
+            }
+            wiersz_kow += '*';
+            document.write(wiersz_kow + '<br>');
+        }
+
+        // Trzecia pętla rysuje dolną krawędź prostokąta
+        var dolnaKrawedz = '';
+        for (var i = 0; i < b_kow; i++) {
+            dolnaKrawedz += '*';
+        }
+        document.write(dolnaKrawedz);
+    </script>
+</body> 
+</html>

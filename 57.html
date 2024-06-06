@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head> 
+    <meta charset="utf-8">
+    <title>Obliczanie pierwiastków</title>
+</head> 
+<body> 
+    <script language="JavaScript">
+        // Funkcja obliczająca pierwiastek drugi
+        function pierwiastekDrugi(x) {
+            return Math.sqrt(x);
+        }
+
+        // Funkcja obliczająca pierwiastek czwartego stopnia
+        function pierwiastekCzwarty(x) {
+            return Math.sqrt(Math.sqrt(x)).toFixed(2);
+        }
+
+        // Numer w dzienniku
+        var numerWdzienniku = 4;
+
+        // Drukowanie liczby, jej pierwiastka drugiego i czwartego stopnia
+        for (var i = numerWdzienniku; i < numerWdzienniku + 15; i++) {
+            var pierwiastek2 = pierwiastekDrugi(i).toFixed(2);
+            var pierwiastek4 = pierwiastekCzwarty(i);
+            document.write("I=" + i + " pierw_2(" + i + ")=" + pierwiastek2 + " pierw_4(" + i + ")=" + pierwiastek4 + "<br>");
+            if ((i - numerWdzienniku + 1) % 3 === 0) {
+                var potwierdzenie = confirm("Aby kontynuować, naciśnij przycisk OK.");
+                if (!potwierdzenie) break;
+            }
+        }
+    </script>
+</body> 
+</html>

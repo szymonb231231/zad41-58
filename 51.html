@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head> 
+    <meta charset="utf-8">
+    <title>Wyświetlanie tekstu wielokrotnie</title>
+</head> 
+<body> 
+    <script language="JavaScript">
+        var tekst = prompt("Podaj tekst do powtórzenia (np. Twoje inicjały):");
+        var iloscPowtorzen = parseInt(prompt("Podaj ile razy chcesz powtórzyć ten tekst:"));
+        var liczbaSpacji = parseInt(prompt("Podaj ilość spacji przed tekstem:"));
+
+        for (var i = 0; i < iloscPowtorzen; i++) {
+            var tekstDoWyswietlenia = "";
+            for (var j = 0; j < liczbaSpacji; j++) {
+                tekstDoWyswietlenia += "&nbsp;";
+            }
+            tekstDoWyswietlenia += (i + 1) + "_" + tekst + "_" + (i + 1);
+            document.write(tekstDoWyswietlenia + "<br>");
+        }
+    </script>
+</body> 
+</html>

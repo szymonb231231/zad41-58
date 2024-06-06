@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html lang="pl">
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Sprawdzenie danych Bielski</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            color: red;
+            font-size: 50px;
+        }
+    </style>
+</head> 
+<body>
+    <div class="result">
+        <script language="JavaScript">
+            let h_bie;
+            do {
+                var liczba1 = prompt("Podaj wysokość trójkąta:", "");
+                h_bie = parseFloat(liczba1);
+            } while (h_bie <= 0);
+
+            let a_bie;
+            do {
+                var liczba2 = prompt("Podaj podstawę trójkąta:", "");
+                a_bie = parseFloat(liczba2);
+            } while (!(a_bie > 0));
+
+            var Pole = a_bie * h_bie / 2;
+            document.write("Pole trójkąta: " + Pole.toFixed(2) + " cm<sup>2</sup><br>");
+        </script>
+    </div>
+</body>
+</html>

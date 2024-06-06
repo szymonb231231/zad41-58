@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyświetlanie imienia i nazwiska</title>
+    <style>
+        .name-display {
+            font-size: 42px; /* (7 % 3) + 40 = 1 + 40 = 41 */
+        }
+        .blue {
+            color: blue;
+        }
+        .green {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wyświetlanie imienia i nazwiska</h1>
+    <label for="number-input">Podaj liczbę:</label>
+    <input type="number" id="number-input" min="1">
+    <button onclick="displayNames()">Wyświetl</button>
+    
+    <div id="display"></div>
+
+    <script>
+        const lastName = "Bielski"; // liczba liter: 7
+        const firstName = "Szymon";
+        const numOfDisplays = (7 % 4) + 10; // (liczba liter nazwiska % 4) + 10 = (7 % 4) + 10 = 3 + 10 = 13
+
+        function displayNames() {
+            const numberInput = document.getElementById('number-input').value;
+            const number = parseInt(numberInput, 10);
+            const displayElement = document.getElementById('display');
+
+            // Clear previous results
+            displayElement.innerHTML = '';
+
+            if (isNaN(number) || number < 1) {
+                displayElement.innerHTML = 'Proszę wprowadzić poprawną liczbę większą od zera.';
+                return;
+            }
+
+            let nameToDisplay = '';
+            let className = '';
+
+            if (number % 2 === 0) {
+                nameToDisplay = lastName; // parzyste: wyświetl nazwisko
+                className = 'blue';
+            } else {
+                nameToDisplay = firstName; // nieparzyste: wyświetl imię
+                className = 'green';
+            }
+
+            for (let i = 0; i < numOfDisplays; i++) {
+                const nameElement = document.createElement('div');
+                nameElement.className = 'name-display ' + className;
+                nameElement.textContent = nameToDisplay;
+                displayElement.appendChild(nameElement);
+            }
+        }
+    </script>
+</body>
+</html>

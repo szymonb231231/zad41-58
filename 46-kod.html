@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html lang="pl">
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Kod źródłowy zadania Bielski</title>
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow: auto;
+        }
+    </style>
+</head> 
+<body>
+    <h1>Kod źródłowy zadania 46 - Bielski</h1>
+    <pre>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="pl"&gt;
+        &lt;head&gt; 
+            &lt;meta charset="UTF-8"&gt; 
+            &lt;title&gt;Sprawdzenie danych Bielski&lt;/title&gt;
+            &lt;style&gt;
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                }
+                .result {
+                    color: red;
+                    font-size: 50px;
+                }
+            &lt;/style&gt;
+        &lt;/head&gt; 
+        &lt;body&gt;
+            &lt;div class="result"&gt;
+                &lt;script language="JavaScript"&gt;
+                    let h_bie;
+                    do {
+                        var liczba1 = prompt("Podaj wysokość trójkąta:", "");
+                        h_bie = parseFloat(liczba1);
+                    } while (h_bie <= 0);
+
+                    let a_bie;
+                    do {
+                        var liczba2 = prompt("Podaj podstawę trójkąta:", "");
+                        a_bie = parseFloat(liczba2);
+                    } while (!(a_bie > 0));
+
+                    var Pole = a_bie * h_bie / 2;
+                    document.write("Pole trójkąta: " + Pole.toFixed(2) + " cm&lt;sup&gt;2&lt;/sup&gt;&lt;br&gt;");
+                &lt;/script&gt;
+            &lt;/div&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+    </pre>
+</body>
+</html>

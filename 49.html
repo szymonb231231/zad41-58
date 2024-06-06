@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html lang="pl">
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Obliczanie silni iteracyjnie</title>
+    <script>
+        function obliczSilnie() {
+            let n_bie = parseInt(prompt("Podaj liczbę n:"));
+            let silnia_bie = 1;
+
+            if (n_bie === 0) {
+                silnia_bie = 1;
+            } else {
+                for (let i = 1; i <= n_bie; i++) {
+                    silnia_bie *= i;
+                }
+            }
+
+            document.getElementById("wynik").innerHTML = n_bie + "! = " + silnia_bie;
+        }
+    </script>
+</head> 
+<body>
+    <h1>Obliczanie silni iteracyjnie</h1>
+    <button onclick="obliczSilnie()">Oblicz silnię</button>
+    <p id="wynik"></p>
+</body>
+</html>

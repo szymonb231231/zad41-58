@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html lang="pl">
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Kod źródłowy zadania - Bielski</title>
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow: auto;
+        }
+    </style>
+</head> 
+<body>
+    <h1>Kod źródłowy zadania 47 - Bielski</h1>
+    <pre>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="pl"&gt;
+        &lt;head&gt; 
+            &lt;meta charset="UTF-8"&gt; 
+            &lt;title&gt;Sprawdzenie trójkąta - Bielski&lt;/title&gt;
+            &lt;style&gt;
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                }
+                .result {
+                    color: red;
+                    font-size: 24px;
+                }
+            &lt;/style&gt;
+        &lt;/head&gt; 
+        &lt;body&gt;
+            &lt;div class="result"&gt;
+                &lt;script language="JavaScript"&gt;
+                    let a_bie, b_bie, c_bie;
+
+                    // Funkcja sprawdzająca czy wczytane boki tworzą trójkąt
+                    function isValidTriangle(a, b, c) {
+                        return a + b &gt; c && a + c &gt; b && b + c &gt; a;
+                    }
+
+                    // Wczytanie boku a_bie
+                    do {
+                        var liczba1 = prompt("Podaj długość boku a:", "");
+                        a_bie = parseFloat(liczba1);
+                    } while (a_bie &lt;= 0);
+
+                    // Wczytanie boku b_bie
+                    do {
+                        var liczba2 = prompt("Podaj długość boku b:", "");
+                        b_bie = parseFloat(liczba2);
+                    } while (b_bie &lt;= 0);
+
+                    // Wczytanie boku c_bie
+                    do {
+                        var liczba3 = prompt("Podaj długość boku c:", "");
+                        c_bie = parseFloat(liczba3);
+                    } while (c_bie &lt;= 0);
+
+                    // Sprawdzenie, czy boki tworzą trójkąt
+                    if (isValidTriangle(a_bie, b_bie, c_bie

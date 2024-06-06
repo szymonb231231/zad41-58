@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang="pl">
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Sprawdzenie trójkąta - Bielski</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            color: red;
+            font-size: 24px;
+        }
+    </style>
+</head> 
+<body>
+    <div class="result">
+        <script language="JavaScript">
+            let a_bie, b_bie, c_bie;
+
+            // Funkcja sprawdzająca czy wczytane boki tworzą trójkąt
+            function isValidTriangle(a, b, c) {
+                return a + b > c && a + c > b && b + c > a;
+            }
+
+            // Wczytanie boku a_bie
+            do {
+                var liczba1 = prompt("Podaj długość boku a:", "");
+                a_bie = parseFloat(liczba1);
+            } while (a_bie <= 0);
+
+            // Wczytanie boku b_bie
+            do {
+                var liczba2 = prompt("Podaj długość boku b:", "");
+                b_bie = parseFloat(liczba2);
+            } while (b_bie <= 0);
+
+            // Wczytanie boku c_bie
+            do {
+                var liczba3 = prompt("Podaj długość boku c:", "");
+                c_bie = parseFloat(liczba3);
+            } while (c_bie <= 0);
+
+            // Sprawdzenie, czy boki tworzą trójkąt
+            if (isValidTriangle(a_bie, b_bie, c_bie)) {
+                document.write("Podane boki tworzą trójkąt.<br>");
+            } else {
+                document.write("Podane boki nie tworzą trójkąta.<br>");
+            }
+        </script>
+    </div>
+</body>
+</html>
